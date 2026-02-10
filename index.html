@@ -3,85 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK/YF Production | Coming Soon</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>My Website</title>
 
     <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #888888;
-        }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            overflow: hidden;
-        }
-
-        .container {
+        /* CSS for the WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed; /* Keeps the button in one place */
+            bottom: 30px;    /* Distance from the bottom */
+            right: 30px;     /* Distance from the right */
+            z-index: 1000;   /* Ensures it sits on top of other content */
+            
+            /* Button Styling */
+            background-color: #25D366; /* Official WhatsApp Green */
+            color: white;
+            width: 70px;     /* Width of the button */
+            height: 70px;    /* Height of the button */
+            border-radius: 50%; /* Makes it a circle */
             text-align: center;
-            letter-spacing: 0.15em;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+            
+            /* Flexbox to center the icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Animation */
+            transition: transform 0.3s ease;
         }
 
-        h1 {
-            font-size: 1.2rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeIn 2s ease-out forwards;
+        /* Hover Effect */
+        .whatsapp-btn:hover {
+            transform: scale(1.1); /* Slightly enlarges on hover */
+            background-color: #20BA5A; /* Slightly darker green on hover */
         }
 
-        p {
-            font-size: 0.9rem;
-            font-weight: 200;
-            color: var(--accent-color);
-            opacity: 0;
-            animation: fadeIn 2s ease-out 1s forwards;
-        }
-
-        /* Subtle Glow Effect */
-        .container::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* The Icon SVG styling */
+        .whatsapp-icon {
+            width: 40px;
+            height: 40px;
+            fill: white; /* Makes the logo white */
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>A YF/NK/MF/MS Production</h1>
-        <p>Coming soon...</p>
-    </div>
+    <h1>Welcome to my website</h1>
+    <p>Scroll down to see the button stay in the corner.</p>
+
+
+    <a href="https://wa.me/19175445353" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-6.9c-18.3-28.8-28-61.5-28-95.9 0-100.7 81.9-181.8 182.4-181.8 48.6 0 94.3 18.9 128.6 53.2 34.3 34.3 53.2 79.9 53.2 128.8 0 100.7-81.8 181.8-182.2 181.8zm100.4-135.5c-5.5-2.7-32.4-15.9-37.4-17.8-5-1.9-8.6-2.7-12.2 2.7-3.6 5.5-14.1 17.8-17.3 21.4-3.2 3.7-6.4 4.1-11.9 1.4-5.5-2.7-23.2-8.5-44.1-27.2-16.3-14.5-27.3-32.5-30.5-38-3.2-5.5-.3-8.5 2.4-11.2 2.5-2.6 5.5-6.7 8.2-10.1 2.8-3.4 3.7-5.8 5.6-9.6 1.8-3.9 .9-7.3-.5-10.1-1.3-2.7-12.2-29.4-16.7-40.2-4.4-10.6-8.9-9.1-12.2-9.3-3.1-.1-6.6-.1-10.1-.1-3.5 0-9.2 1.3-14 6.5-4.8 5.2-18.4 17.9-18.4 43.8 0 25.9 18.9 50.9 21.5 54.4 2.7 3.5 37.2 56.6 90.2 79.4 12.6 5.4 22.4 8.7 30 11.2 12.6 4.2 24.1 3.6 33.1 2.2 9.9-1.5 32.4-13.2 37-26 4.6-12.7 4.6-23.7 3.2-26-1.4-2.3-5-3.7-10.5-6.4z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
