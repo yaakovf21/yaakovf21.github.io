@@ -3,51 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Hustle - Turn Your eBay Account Into an Income-Generating Asset</title>
+    <title>Auto Hustle</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Dark background from the image */
+            height: 100%;
+            background-color: #0a0a0a; /* Matches the dark background */
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
 
-        .poster-container {
+        .container {
             position: relative;
-            width: 100%;
-            max-width: 600px; /* Adjust max-width as needed */
+            height: 100vh; /* Fits the height of the screen */
+            display: inline-block;
         }
 
-        .poster-image {
-            width: 100%;
-            height: auto;
+        .background-img {
+            height: 100%; /* Makes image fill the screen height */
+            width: auto;
             display: block;
         }
 
-        /* Invisible clickable area over the green button */
-        .whatsapp-link {
+        /* The invisible clickable box over the green button */
+        .click-area {
             position: absolute;
-            /* Adjust these percentages to perfectly match the green button's position and size */
-            top: 73%;
-            left: 18%;
-            width: 64%;
-            height: 10%;
-            display: block;
-            /* Background color for testing, remove for final version */
-            /* background-color: rgba(0, 255, 0, 0.3); */
-            z-index: 10;
+            bottom: 15%;  /* Position from bottom */
+            left: 17%;    /* Position from left */
+            width: 66%;   /* Width of the green box */
+            height: 10%;  /* Height of the green box */
             cursor: pointer;
+            z-index: 10;
+            /* border: 2px solid red; */ /* Uncomment this line to see the box for testing */
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                height: auto;
+            }
+            .background-img {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="poster-container">
-        <img src="image_0.png" alt="Auto Hustle Poster" class="poster-image">
-        <a href="https://wa.me/19175445353" class="whatsapp-link" target="_blank" aria-label="Contact Us To Get Started on WhatsApp"></a>
+    <div class="container">
+        <img src="poster.jpg" alt="Auto Hustle" class="background-img">
+        
+        <a href="https://wa.me/19175445353" class="click-area" target="_blank"></a>
     </div>
 
 </body>
