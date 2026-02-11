@@ -3,61 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Hustle</title>
+    <title>Auto Hustle | Passive eBay Revenue</title>
     <style>
-        body, html {
+        :root {
+            --gold: #d4af37;
+            --gold-bright: #f2d06b;
+            --dark-bg: #0a0a0a;
+            --card-bg: #141414;
+            --text-light: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
             margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #0a0a0a; /* Matches the dark background */
-            display: flex;
-            justify-content: center;
+            line-height: 1.7;
+            padding-bottom: 100px;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 100%);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo-main {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
         }
 
         .container {
-            position: relative;
-            height: 100vh; /* Fits the height of the screen */
-            display: inline-block;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
         }
 
-        .background-img {
-            height: 100%; /* Makes image fill the screen height */
-            width: auto;
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        /* Requirements Grid */
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .req-item {
+            background: #1c1c1c;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #444;
+        }
+
+        .req-icon {
+            font-size: 3rem;
             display: block;
+            margin-bottom: 10px;
         }
 
-        /* The invisible clickable box over the green button */
-        .click-area {
-            position: absolute;
-            bottom: 15%;  /* Position from bottom */
-            left: 17%;    /* Position from left */
-            width: 66%;   /* Width of the green box */
-            height: 10%;  /* Height of the green box */
-            cursor: pointer;
-            z-index: 10;
-            /* border: 2px solid red; */ /* Uncomment this line to see the box for testing */
+        /* Profit Banner */
+        .profit-banner {
+            background: linear-gradient(135deg, #d4af37 0%, #8a6d1a 100%);
+            color: #000;
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
         }
 
-        /* Mobile optimization */
-        @media (max-width: 600px) {
-            .container {
-                width: 100%;
-                height: auto;
-            }
-            .background-img {
-                width: 100%;
-                height: auto;
-            }
+        .profit-stat { flex: 1; padding: 30px; min-width: 250px; }
+        .amount { display: block; font-size: 3.5rem; font-weight: 900; }
+        .label { font-size: 1.2rem; text-transform: uppercase; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 10px; border: 1px solid #333; border-radius: 8px; background: #111; }
+        .faq-btn {
+            width: 100%; background: none; border: none; color: #fff;
+            padding: 15px; text-align: left; font-size: 1.1rem; cursor: pointer;
+            display: flex; justify-content: space-between;
         }
+        .faq-content { display: none; padding: 0 15px 15px; color: var(--text-dim); }
+        .faq-item.active .faq-content { display: block; }
+
+        /* Contact Section and Bouncing Arrow */
+        .contact-cta {
+            text-align: center;
+            padding: 50px 20px;
+            background: #111;
+            border-radius: 20px;
+            border: 1px dashed var(--gold);
+            margin-top: 40px;
+        }
+
+        .cta-arrow {
+            font-size: 5rem;
+            color: var(--gold);
+            display: block;
+            margin: 20px 0;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+        }
+
+        /* Fixed WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 9999;
+            border: 3px solid #fff;
+        }
+
+        .wa-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        footer { text-align: center; padding: 40px; color: #444; }
     </style>
 </head>
 <body>
 
+    <header>
+        <img src="logo.png" alt="Auto Hustle Logo" class="logo-main">
+        <h1>Auto Hustle</h1>
+        <p style="color: var(--gold); font-weight: bold;">PASSIVE EBAY MANAGEMENT</p>
+    </header>
+
     <div class="container">
-        <img src="poster.jpg" alt="Auto Hustle" class="background-img">
         
-        <a href="https://wa.me/19175445353" class="click-area" target="_blank"></a>
+        <section class="section-card">
+            <h2>The Opportunity</h2>
+            <p>Hi, thank you for your interest in the <strong>Auto Hustle eBay dropshipping program</strong>. This is a program where we use your eBay account for dropshipping and you pay us a percentage of the profits.</p>
+            <p>There is no work for you, we handle everything. There is no risk on your end. All the money goes directly to <strong>your</strong> account.</p>
+        </section>
+
+        <section>
+            <h2 style="text-align:center; border:none;">Requirements</h2>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-icon">📦</span>
+                    <h4>eBay Account</h4>
+                    <p>New or existing accounts accepted.</p>
+                </div>
+                <div class="req-item">
+                    <span class="req-icon">🏦</span>
+                    <h4>Bank Account</h4>
+                    <p>For your direct eBay payouts.</p>
+                </div>
+                <div class="req-item">
+                    <span class="req-icon">💳</span>
+                    <h4>Credit Card</h4>
+                    <p>Keep 100% of the cashback earned.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="profit-banner">
+            <div class="profit-stat">
+                <span class="label">Total Profit</span>
+                <span class="amount">$800+</span>
+            </div>
+            <div class="profit-stat" style="background: rgba(0,0,0,0.1);">
+                <span class="label">Your 40% Share</span>
+                <span class="amount">$320+</span>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>How It Works</h2>
+            <ol style="padding-left: 20px;">
+                <li><strong>Sourcing:</strong> We find great products from Amazon, Home Depot, etc.</li>
+                <li><strong>Listing:</strong> We list these items on your eBay account.</li>
+                <li><strong>Ordering:</strong> When an item sells, we order it directly to the customer.</li>
+                <li><strong>Payouts:</strong> eBay pays you directly to your bank account.</li>
+                <li><strong>The Split:</strong> At the end of the month, you send us 60% of the profit.</li>
+            </ol>
+        </section>
+
+        <section class="section-card">
+            <h2>Why Multiple Accounts?</h2>
+            <p>Every account has limits and the eBay algorithm favors multiple storefronts. We need your account to scale the business. You keep 100% of the cashback from source spending—this could be an extra <strong>$100-$200+</strong> depending on your card.</p>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <button class="faq-btn">Do I pay for products upfront? <span>▼</span></button>
+                <div class="faq-content">No. We only order once you've been paid on eBay. You're never really laying out money.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <button class="faq-btn">What accounts do I need? <span>▼</span></button>
+                <div class="faq-content">An eBay account and a source account (Amazon, Ali Express, etc).</div>
+            </div>
+        </section>
+
+        <div class="contact-cta">
+            <h2>CONTACT TO GET STARTED</h2>
+            <p>Follow the arrow below to message us on WhatsApp</p>
+            <span class="cta-arrow">⬇️</span>
+        </div>
+
     </div>
+
+    <footer>
+        &copy; 2026 Auto Hustle Program
+    </footer>
+
+    <a href="https://wa.me/18483523684" class="whatsapp-btn" target="_blank">
+        <span class="wa-icon">💬</span>
+        GET STARTED ON WHATSAPP
+    </a>
 
 </body>
 </html>
