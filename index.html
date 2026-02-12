@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Hustle | Premier E-Commerce Automation</title>
+    <title>Auto Hustle | eBay Dropshipping</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
@@ -14,410 +14,336 @@
                 extend: {
                     colors: {
                         gold: {
-                            400: '#FCD34D',
                             500: '#F59E0B',
                             600: '#D97706',
                         },
                         dark: {
                             900: '#050505',
-                            800: '#121212',
-                            700: '#1E1E1E'
+                            800: '#111111',
+                            700: '#1a1a1a'
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
+        /* Raw, simplistic scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #333; }
         ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
         
-        /* Gold Gradient Text */
-        .text-gradient-gold {
-            background: linear-gradient(to right, #FCD34D, #F59E0B, #D97706);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Glassmorphism */
-        .glass-card {
-            background: rgba(30, 30, 30, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        /* FAQ Animation */
+        /* Simple FAQ transitions */
         .faq-content {
-            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
             max-height: 0;
-            opacity: 0;
             overflow: hidden;
+            transition: all 0.2s ease-out;
         }
         .faq-item.active .faq-content {
             max-height: 500px;
-            opacity: 1;
             padding-bottom: 20px;
         }
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
-            color: #F59E0B;
         }
     </style>
 </head>
-<body class="bg-dark-900 text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-dark-900 text-gray-200 font-sans antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-dark-900/90 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="w-full border-b border-white/10 bg-dark-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex items-center justify-between h-20">
-                <a href="">
-                    <div class="flex-shrink-0 flex items-center gap-3">
-                            <img src="logo.png" alt="Auto Hustle" class="h-12 w-12 rounded-full object-cover border border-gold-500">
-                            <span class="font-display font-bold text-xl tracking-wider">AUTO <span class="text-gold-500">HUSTLE</span></span>
-                    </div>
-                </a>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#how-it-works" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
-                        <a href="#earnings" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Earnings</a>
-                        <a href="#faq" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-                        <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-black font-bold px-5 py-2 rounded-full transition-all transform hover:scale-105">Start Now</a>
-                    </div>
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Auto Hustle" class="h-12 w-12 rounded-full object-cover border border-gold-500">
+                    <span class="font-bold text-lg tracking-wide text-white">AUTO HUSTLE</span>
                 </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#how-it-works" class="text-sm font-semibold hover:text-gold-500">Process</a>
+                    <a href="#earnings" class="text-sm font-semibold hover:text-gold-500">Profit Split</a>
+                    <a href="#faq" class="text-sm font-semibold hover:text-gold-500">FAQ</a>
+                </div>
+                <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-black font-bold px-6 py-2 rounded text-sm transition-colors">
+                    Start Earning
+                </a>
             </div>
         </div>
     </nav>
 
-    <a href="#contact" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group">
-        <span class="bg-white text-dark-900 px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 hidden sm:block">
-            Chat with Us
-        </span>
-        
-        <div class="relative bg-gold-500 hover:bg-gold-400 text-black p-4 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.5)] transition-all transform hover:scale-110 flex items-center justify-center">
-            <i data-lucide="message-circle-question" class="w-7 h-7"></i>
-        </div>
+    <a href="#contact" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebc57] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
     </a>
 
-    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 pointer-events-none opacity-20">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-gold-500 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-900 rounded-full blur-[120px]"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 mb-8">
-                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                <span class="text-gold-400 text-sm font-semibold tracking-wide uppercase">Limited Spots for Q1 2026</span>
-            </div>
-           
-            <h1 class="text-5xl md:text-7xl font-display font-extrabold tracking-tight mb-6">
-                Turn Your Account Into <br>
-                <span class="text-gradient-gold">Passive Income</span>
+    <div class="pt-24 pb-20 border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                WE MANAGE YOUR EBAY.<br>
+                <span class="text-gold-500">YOU KEEP THE PROFIT.</span>
             </h1>
-           
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                We manage the logistics, the inventory, and the sales. You provide the account foundation. We split the profits. 100% Hands-free.
+            
+            <p class="mt-4 max-w-xl mx-auto text-lg text-gray-400">
+                Stop trying to learn dropshipping. We already have the infrastructure. We use your account to sell our winning products. We split the net profit 60/40.
             </p>
-           
-            <div class="mt-10 flex justify-center gap-4">
-                <a href="#contact" class="px-8 py-4 border border-transparent text-base font-bold rounded-full text-black bg-gold-500 hover:bg-gold-400 md:text-lg md:px-10 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-                    Apply for Partnership
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-black font-bold text-lg rounded transition-colors">
+                    Apply Now
                 </a>
-                <a href="#how-it-works" class="px-8 py-4 border border-gray-700 text-base font-medium rounded-full text-white hover:bg-white/5 md:text-lg md:px-10 transition-all">
-                    Learn More
+                <a href="#how-it-works" class="px-8 py-4 bg-dark-800 border border-white/10 hover:border-gold-500 text-white font-bold text-lg rounded transition-colors">
+                    How It Works
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="border-y border-white/10 bg-dark-800/50 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+    <div class="bg-dark-800 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="p-4">
-                    <div class="text-4xl font-display font-bold text-white mb-1">$0</div>
-                    <div class="text-gold-500 text-sm uppercase tracking-widest font-semibold">Upfront Cost</div>
+                    <div class="text-4xl font-black text-white mb-1">$0</div>
+                    <div class="text-gray-500 text-xs font-bold uppercase">Upfront Fees</div>
                 </div>
                 <div class="p-4">
-                    <div class="text-4xl font-display font-bold text-white mb-1">60/40</div>
-                    <div class="text-gold-500 text-sm uppercase tracking-widest font-semibold">Profit Split</div>
+                    <div class="text-4xl font-black text-white mb-1">60/40</div>
+                    <div class="text-gray-500 text-xs font-bold uppercase">Profit Split (Us/You)</div>
                 </div>
                 <div class="p-4">
-                    <div class="text-4xl font-display font-bold text-white mb-1">24/6</div>
-                    <div class="text-gold-500 text-sm uppercase tracking-widest font-semibold">Account Management</div>
+                    <div class="text-4xl font-black text-white mb-1">100%</div>
+                    <div class="text-gray-500 text-xs font-bold uppercase">Hands Free</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="how-it-works" class="py-24 bg-dark-900 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="how-it-works" class="py-24 bg-dark-900 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">The Auto Hustle Blueprint</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">We've simplified e-commerce into three steps. We do the heavy lifting, you hold the assets.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">How It Works</h2>
+                <p class="text-gray-400">Simple 3-step process to monetize your commerce accounts.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-6 left-8 bg-dark-800 border border-gold-500 text-gold-500 w-12 h-12 flex items-center justify-center rounded-xl font-bold text-xl">1</div>
-                    <div class="mt-6">
-                        <i data-lucide="user-check" class="w-12 h-12 text-gray-300 mb-6"></i>
-                        <h3 class="text-xl font-bold text-white mb-3">Onboarding</h3>
-                        <p class="text-gray-400 leading-relaxed mb-4">
-                            You provide the eBay account and a payment method for sourcing goods.
-                        </p>
-                        <div class="bg-gold-500/10 border border-gold-500/30 p-3 rounded-lg flex gap-3 items-start">
-                            <i data-lucide="star" class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5"></i>
-                            <p class="text-xs text-gold-400 font-semibold">Pro Tip: Aged accounts (2+ years) are preferred. They have established trust with eBay, making them far more reliable and stable for automation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-6 left-8 bg-dark-800 border border-gold-500 text-gold-500 w-12 h-12 flex items-center justify-center rounded-xl font-bold text-xl">2</div>
-                    <div class="mt-6">
-                        <i data-lucide="bar-chart-3" class="w-12 h-12 text-gray-300 mb-6"></i>
-                        <h3 class="text-xl font-bold text-white mb-3">Optimization</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Our team sources high-margin items <strong>exclusively from Amazon</strong>. We list, optimize, and manage customer service entirely.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative group hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-6 left-8 bg-dark-800 border border-gold-500 text-gold-500 w-12 h-12 flex items-center justify-center rounded-xl font-bold text-xl">3</div>
-                    <div class="mt-6">
-                        <i data-lucide="coins" class="w-12 h-12 text-gold-500 mb-6"></i>
-                        <h3 class="text-xl font-bold text-white mb-3">Profit & Scale</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            When items sell, you get paid by eBay. At the end of the month, we invoice you for our share of the <strong>net profit only</strong>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="earnings" class="py-24 bg-dark-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-               
-                <div class="mb-12 lg:mb-0">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">Transparent Earnings. <br>Real Results.</h2>
-                    <p class="text-gray-400 mb-8 text-lg">
-                        This isn't a "get rich quick" scheme. It's a legitimate business model leveraging algorithmic arbitrage.
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="bg-dark-800 p-8 rounded border border-white/5">
+                    <div class="w-12 h-12 bg-dark-700 rounded flex items-center justify-center mb-6 text-gold-500 font-bold text-xl">1</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Onboarding</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        You give us access to your eBay and Amazon accounts. We connect our inventory software.
                     </p>
-                   
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border border-gold-500 text-gold-500 mt-1">
-                                <i data-lucide="check" class="w-3 h-3"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold text-white">Zero Financial Risk</h4>
-                                <p class="text-gray-400 text-sm">We only order stock *after* the customer has paid you.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border border-gold-500 text-gold-500 mt-1">
-                                <i data-lucide="check" class="w-3 h-3"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold text-white">Credit Card Stacking</h4>
-                                <p class="text-gray-400 text-sm">You keep 100% of the miles/cashback from inventory purchases (Est. $100-300/mo extra).</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border border-gold-500 text-gold-500 mt-1">
-                                <i data-lucide="check" class="w-3 h-3"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold text-white">Scalability</h4>
-                                <p class="text-gray-400 text-sm">One partner can manage multiple storefronts for multiplied income.</p>
-                            </div>
-                        </div>
+                    <div class="text-xs text-gold-500 font-mono bg-black/30 p-2 rounded border border-gold-500/20">
+                        Aged accounts are preferred. They have established trust and are more reliable.
                     </div>
                 </div>
 
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-gold-600 to-purple-600 rounded-2xl blur opacity-30"></div>
-                    <div class="relative bg-dark-900 rounded-2xl border border-white/10 p-8">
-                        <div class="flex justify-between items-center mb-8">
-                            <h3 class="font-bold text-xl">Monthly Projection</h3>
-                            <span class="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded uppercase tracking-wider">Active Account</span>
-                        </div>
-                       
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between text-sm text-gray-400 mb-1">
-                                    <span>Gross Sales</span>
-                                    <span class="text-white">$3,500.00</span>
-                                </div>
-                                <div class="w-full bg-dark-700 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-gray-500 h-full" style="width: 100%"></div>
-                                </div>
-                            </div>
-                           
-                            <div>
-                                <div class="flex justify-between text-sm text-gray-400 mb-1">
-                                    <span>Cost of Goods (Paid via your card)</span>
-                                    <span class="text-white">-$2,450.00</span>
-                                </div>
-                                <div class="w-full bg-dark-700 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-red-500/50 h-full" style="width: 70%"></div>
-                                </div>
-                            </div>
+                <div class="bg-dark-800 p-8 rounded border border-white/5">
+                    <div class="w-12 h-12 bg-dark-700 rounded flex items-center justify-center mb-6 text-gold-500 font-bold text-xl">2</div>
+                    <h3 class="text-xl font-bold text-white mb-3">We Sell</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We list items from Amazon. When they sell on eBay, we handle the shipping and customer service. You do nothing.
+                    </p>
+                </div>
 
-                            <div class="pt-4 border-t border-white/10">
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span class="text-gold-500 font-bold">Total Net Profit</span>
-                                    <span class="text-gold-500 font-bold">$1,050.00</span>
-                                </div>
-                                <div class="w-full bg-dark-700 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-gold-500 h-full" style="width: 30%"></div>
-                                </div>
-                                <div class="flex justify-between mt-2 text-xs text-gray-500">
-                                    <span>Your Share (40%): $420 + Cashback</span>
-                                    <span>Our Fee (60%): $630</span>
-                                </div>
-                            </div>
+                <div class="bg-dark-800 p-8 rounded border border-white/5">
+                    <div class="w-12 h-12 bg-dark-700 rounded flex items-center justify-center mb-6 text-gold-500 font-bold text-xl">3</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Profit Split</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        At the end of the month, we calculate the net profit. We send you an invoice for our 60% share. You keep the rest.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="earnings" class="py-24 bg-dark-800 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-white mb-6">Real Numbers.</h2>
+                    <p class="text-gray-400 mb-8">
+                        This is arbitrage. We buy low on Amazon and sell high on eBay.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-500 mr-3"></i>
+                            <span>Zero Risk: We only buy after it sells.</span>
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-500 mr-3"></i>
+                            <span>Credit Card Stacking (Keep the points).</span>
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-500 mr-3"></i>
+                            <span>Scale to multiple accounts.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-dark-900 rounded border border-white/10 p-6 font-mono text-sm">
+                    <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                        <span class="text-white font-bold">TYPICAL MONTHLY STATEMENT</span>
+                        <span class="text-green-500">ACTIVE</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">Total Sales</span>
+                            <span class="text-white">$3,500.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">COGS (Inventory Cost)</span>
+                            <span class="text-red-400">-$2,700.00</span>
+                        </div>
+                        <div class="w-full bg-dark-700 h-px my-2"></div>
+                        <div class="flex justify-between text-gold-500 font-bold">
+                            <span>NET PROFIT</span>
+                            <span>$800.00</span>
                         </div>
                     </div>
+
+                    <div class="mt-6 bg-dark-800 p-4 rounded border border-white/5">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-400">Your Split (40%)</span>
+                            <span class="text-white">$320.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Card Cashback/Points (Est)</span>
+                            <span class="text-white">+$50.00</span>
+                        </div>
+                        <div class="mt-2 pt-2 border-t border-white/10 flex justify-between font-bold text-green-400">
+                            <span>TOTAL TO YOU</span>
+                            <span>$370.00 / mo</span>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-gray-600 mt-4">Estimates based on active performance. Results may vary.</p>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div id="faq" class="py-24 bg-dark-900 border-t border-white/5">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-gold-500 uppercase tracking-widest text-sm font-semibold">Common Questions</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mt-2">Everything You Need To Know</h2>
-            </div>
-           
-            <div class="space-y-4">
-                <div class="faq-item bg-dark-800 border border-white/10 rounded-xl overflow-hidden">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFAQ(this)">
-                        <span class="font-bold text-lg text-white">Do I need to pay for products upfront?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300"></i>
+    <div id="faq" class="py-20 bg-dark-900">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">FAQ</h2>
+            
+            <div class="space-y-3">
+				<div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">Why do you need my account?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
                     </button>
-                    <div class="faq-content px-6 text-gray-400">
-                        <p>No. We operate on a 'Just-In-Time' model. We only purchase inventory *after* a customer has already bought and paid for the item on your eBay store. You are never laying out money for unsold stock.</p>
+                    <div class="faq-content px-5 text-gray-400 text-sm">
+                        <p>There are listing & selling limits on each account. Additionally, the eBay algorithm won't necessarily promote so many products from one account. We do this on our own accounts too.</p>
+                    </div>
+                </div>
+				
+				<div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">Why do you use my credit card?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
+                    </button>
+                    <div class="faq-content px-5 text-gray-400 text-sm">
+                        <p>Because all the money from eBay goes straight into your bank account, we use your card to fulfil the source orders. Also, you get to keep the cashback/points.</p>
+                    </div>
+                </div>
+				
+                <div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">Do I pay for products upfront?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
+                    </button>
+                    <div class="faq-content px-5 text-gray-400 text-sm">
+                        <p>No. We only buy the item using your card *after* the customer has paid you on eBay. You are never laying out money for unsold stock.</p>
                     </div>
                 </div>
 
-                <div class="faq-item bg-dark-800 border border-white/10 rounded-xl overflow-hidden">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFAQ(this)">
-                        <span class="font-bold text-lg text-white">Why does account age matter?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300"></i>
+                <div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">Why do you need accounts with prior history?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
                     </button>
-                    <div class="faq-content px-6 text-gray-400">
-                        <p>eBay places "trust scores" on every account. <strong>Older accounts (2+ years) are viewed as more reliable</strong>. This established history provides a safer, more stable foundation for consistent sales compared to brand new accounts.</p>
+                    <div class="faq-content px-5 text-gray-400 text-sm">
+                        <p>eBay trusts older accounts more. Brand new accounts get restricted if they sell too fast. An account with buying/selling history or other activity helps improve reliability.</p>
                     </div>
                 </div>
 
-                <div class="faq-item bg-dark-800 border border-white/10 rounded-xl overflow-hidden">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFAQ(this)">
-                        <span class="font-bold text-lg text-white">What accounts do I need?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300"></i>
+                <div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">What accounts do I need?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
                     </button>
-                    <div class="faq-content px-6 text-gray-400">
+                    <div class="faq-content px-5 text-gray-400 text-sm">
                         <p>You need an active eBay account and a source account (specifically, Amazon). If you don't have these, we can guide you through the setup process during onboarding.</p>
                     </div>
                 </div>
-
-                 <div class="faq-item bg-dark-800 border border-white/10 rounded-xl overflow-hidden">
-                    <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFAQ(this)">
-                        <span class="font-bold text-lg text-white">How much time does this take me?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300"></i>
+				
+				<div class="faq-item bg-dark-800 border border-white/5 rounded">
+                    <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-bold text-white">How much time does this take me to manage?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-500"></i>
                     </button>
-                    <div class="faq-content px-6 text-gray-400">
-                        <p>Zero. This is a fully managed service. Our team handles listing, pricing, order fulfillment, and customer inquiries. You simply check your bank account at the end of the month and pay the profit split invoice.</p>
+                    <div class="faq-content px-5 text-gray-400 text-sm">
+                        <p>None. Our team handles listing, pricing, order fulfillment, and customer inquiries. You simply check your bank account at the end of the month and pay the profit split invoice.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="contact" class="py-24 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div id="contact" class="py-20 bg-dark-800 border-t border-white/5">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-10">
-                <i data-lucide="crown" class="w-12 h-12 text-gold-500 mx-auto mb-4"></i>
-                <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-4">Ready to Hustle?</h2>
-                <p class="text-gray-400 text-lg">We only onboard a limited number of partners each month to ensure quality control.</p>
+                <h2 class="text-3xl font-bold text-white mb-2">Start Hustling</h2>
+                <p class="text-gray-400">Fill out the form or WhatsApp us. We reply fast.</p>
             </div>
 
-            <div class="bg-dark-800 border border-white/10 rounded-2xl p-8 shadow-2xl">
-               
-                <div class="text-center border-b border-white/10 pb-8 mb-8">
-                    <p class="text-white font-semibold mb-4">Fastest Response Time</p>
-                    <a href="#" onclick="openWhatsApp()" class="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold rounded-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-green-900/20">
-                        <i data-lucide="message-circle" class="w-6 h-6 mr-2"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
+            <div class="bg-dark-900 border border-white/10 rounded p-8">
+                
+                <button onclick="openWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold py-3 rounded mb-8 flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Message on WhatsApp
+                </button>
 
-                <div>
-                    <p class="text-center text-gray-500 text-sm mb-6 uppercase tracking-widest">Prefer us to message you?</p>
-                    
-                    <form action="https://formspree.io/f/mojneebb" method="POST" id="contactForm" class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs text-gray-400 uppercase mb-1">Name</label>
-                                <input type="text" name="name" id="userName" class="w-full bg-dark-900 border border-dark-700 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors" placeholder="Your Name" required>
-                            </div>
-                            <div>
-                                <label class="block text-xs text-gray-400 uppercase mb-1">Phone Number <span class="text-green-400/80 normal-case tracking-normal ml-1">(WhatsApp Preferred)</span></label>
-                                <input type="tel" name="phone" id="userPhone" class="w-full bg-dark-900 border border-dark-700 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors" placeholder="+1 (555) 000-0000" required>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-gray-400 uppercase mb-1">Do you have an eBay account?</label>
-                            <select name="account_status" id="userAccount" class="w-full bg-dark-900 border border-dark-700 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors">
-                                <option value="Old Account">Yes, I have an old account (2+ years)</option>
-                                <option value="New Account">Yes, created recently</option>
-                                <option value="No Account">No, I need to make one</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-dark-700 hover:bg-gold-500 hover:text-black text-white font-bold py-3 rounded-lg transition-all duration-300">
-                            Send Request
-                        </button>
-                        <p class="text-xs text-center text-gray-600 mt-2">Our team usually responds within a few hours.</p>
-                    </form>
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t border-white/10"></div>
+                    <span class="flex-shrink-0 mx-4 text-gray-600 text-xs uppercase">Or email us</span>
+                    <div class="flex-grow border-t border-white/10"></div>
                 </div>
+                
+                <form action="https://formspree.io/f/mojneebb" method="POST" id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-gray-500 uppercase mb-1">Name</label>
+                        <input type="text" name="name" class="w-full bg-dark-800 border border-dark-700 rounded p-3 text-white focus:border-gold-500 focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 uppercase mb-1">WhatsApp / Phone</label>
+                        <input type="tel" name="phone" class="w-full bg-dark-800 border border-dark-700 rounded p-3 text-white focus:border-gold-500 focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 uppercase mb-1">Do you have an eBay account?</label>
+                        <select name="account_status" class="w-full bg-dark-800 border border-dark-700 rounded p-3 text-white focus:border-gold-500 focus:outline-none">
+                            <option value="Old Account">Yes, I have an old account</option>
+                            <option value="New Account">Yes, created recently</option>
+                            <option value="No Account">No, I need to make one</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold py-3 rounded transition-colors mt-2">
+                        Send
+                    </button>
+                </form>
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark-900 border-t border-white/5 py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <img src="logo.png" alt="Logo" class="h-10 w-10 mx-auto rounded-full mb-4 grayscale opacity-50">
-            <p class="text-gray-600 text-sm">
-                &copy; 2026 Auto Hustle. All rights reserved.<br>
-                Income claims are estimates based on active partner performance. Results may vary.
-            </p>
-            <p class="text-gray-700 text-xs mt-4">
-                Developed by <span class="text-gold-500 font-semibold">SevDev</span>
-            </p>
-        </div>
+    <footer class="bg-dark-900 py-8 border-t border-white/5 text-center">
+        <p class="text-gray-600 text-xs">
+            &copy; 2026 Auto Hustle. <br>
+            Not affiliated with eBay Inc. or Amazon.com Inc. <br>
+			Developed by: SevDev
+        </p>
     </footer>
 
     <script>
@@ -430,8 +356,6 @@
             "972507822901"
         ];
        
-        // --- Logic ---
-
         // FAQ Toggle
         function toggleFAQ(element) {
             const item = element.parentElement;
@@ -440,16 +364,14 @@
             if (!wasActive) item.classList.add('active');
         }
 
-        // WhatsApp Load Balancer (Persistent)
+        // WhatsApp Load Balancer
         function getAssignedWaNumber() {
             const storageKey = 'autoHustle_assigned_wa';
             let assignedNum = localStorage.getItem(storageKey);
 
             if (!assignedNum) {
-                // Randomly select one
                 const randomIndex = Math.floor(Math.random() * waNumbers.length);
                 assignedNum = waNumbers[randomIndex];
-                // Save it for next time
                 localStorage.setItem(storageKey, assignedNum);
             }
             return assignedNum;
@@ -457,7 +379,7 @@
 
         function openWhatsApp() {
             const number = getAssignedWaNumber();
-            const message = "Hi, I'm interested in the passive eBay management program. I saw your website.";
+            const message = "Hey, I want to start the eBay dropshipping. I saw your website.";
             const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
